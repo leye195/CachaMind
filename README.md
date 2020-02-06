@@ -2,10 +2,9 @@
 
 Realtime Drawing Game CachaMind - SocketIO, webpack and Node
 
-- [x] VanillaJS
-- [x] Express
-- [x] Pug
-- [x] SocketIO
+- VanillaJS
+- Express, SocketIO
+- Pug, SCSS
 
 # Feature
 
