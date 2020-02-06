@@ -1,0 +1,210 @@
+@keyframes notification {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+@keyframes disappear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  height: -webkit-fill-available;
+  background-color: $grey;
+  .loginBox {
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px 7px #00000029;
+    height: 150px;
+    width: 400px;
+    .title-container {
+      text-align: center;
+      margin: 10px;
+      font-size: 2.5rem;
+      font-weight: 800;
+      h1 {
+        letter-spacing: 10px;
+        text-shadow: 1px 4px 7px #888888;
+      }
+    }
+    form {
+      text-align: center;
+      padding: 10px;
+      input[type="text"] {
+        padding: 10px;
+        border: 1px solid #eeeeee;
+        color: black;
+        background: #e8e8e873;
+        font-size: 0.8rem;
+        width: 100%;
+      }
+    }
+  }
+  .gameContainer {
+    .notice {
+      display: flex;
+      position: relative;
+      h1 {
+        padding: 5px;
+        font-weight: 600;
+        text-shadow: 1px 1px 13px #2f2f2fad;
+      }
+      .time {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .notification {
+      position: absolute;
+      text-align: center;
+      bottom: 0;
+      left: 0;
+      margin: 10px;
+      padding: 5px;
+      border-radius: 10px;
+      color: white;
+      animation: notification 5s forwards;
+    }
+    .contents-container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      .paint {
+        background-color: white;
+        margin-right: 50px;
+        width: 100%;
+        .word {
+          border-bottom: 5px solid #e3e3e3;
+          padding: 10px;
+          p.answer {
+            text-align: center;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 800;
+          }
+        }
+        .canvas {
+          border-bottom: 1px solid #cccccca3;
+        }
+        .controls {
+          width: 100%;
+          height: 80px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: $grey;
+          .controls_clean {
+            .control__clean,
+            .control__mode {
+              width: 100px;
+              height: 20px;
+              margin: 5px;
+              font-size: 1rem;
+              box-shadow: 1px 1px 20px 0px #848484c9;
+              cursor: pointer;
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+          }
+          .controls__colors {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            .control__color {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              cursor: pointer;
+              box-shadow: 1px 1px 11px 1px #00000061;
+            }
+          }
+        }
+      }
+      .chat {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 900px;
+        width: 300px;
+        .messages {
+          height: 400px;
+          width: 100%;
+          background: white;
+          overflow: scroll;
+          box-shadow: $bxShadow;
+          li {
+            padding: 10px;
+          }
+        }
+        .chat__form {
+          padding: 10px;
+          width: 100%;
+          text-align: center;
+          input {
+            padding: 10px;
+            font-size: 0.85rem;
+            width: 100%;
+            box-shadow: 0px 0px 10px 1px #7777778c;
+          }
+        }
+      }
+      .user_list {
+        max-height: 400px;
+        margin-left: 10px;
+        background: white;
+        box-shadow: $bxShadow;
+        ul {
+          height: 100%;
+          width: 120px;
+          li {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 50px;
+            box-shadow: $bxShadow;
+          }
+        }
+      }
+    }
+  }
+
+  .loginBox,
+  .gameContainer {
+    display: none;
+  }
+  &.loggedOut .loginBox {
+    display: block;
+  }
+  &.loggedIn .gameContainer {
+    display: block;
+  }
+}

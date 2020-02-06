@@ -1,0 +1,317 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+input {
+  border: none;
+  box-sizing: border-box; }
+  *:focus, *:active,
+  input:focus,
+  input:active {
+    outline: none; }
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: transparent; }
+  header .menu {
+    width: 100%;
+    margin: 10px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; }
+    header .menu i {
+      cursor: pointer; }
+
+@keyframes notification {
+  0% {
+    transform: translateY(40px);
+    opacity: 0; }
+  40% {
+    transform: translateY(-30px);
+    opacity: 1; }
+  55% {
+    transform: translateY(-30px);
+    opacity: 1; }
+  100% {
+    transform: translateY(40px);
+    opacity: 0; } }
+
+@keyframes disappear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  height: -webkit-fill-available;
+  background-color: #e3e3e3; }
+  body .loginBox {
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px 7px #00000029;
+    height: 150px;
+    width: 400px; }
+    body .loginBox .title-container {
+      text-align: center;
+      margin: 10px;
+      font-size: 2.5rem;
+      font-weight: 800; }
+      body .loginBox .title-container h1 {
+        letter-spacing: 10px;
+        text-shadow: 1px 4px 7px #888888; }
+    body .loginBox form {
+      text-align: center;
+      padding: 10px; }
+      body .loginBox form input[type="text"] {
+        padding: 10px;
+        border: 1px solid #eeeeee;
+        color: black;
+        background: #e8e8e873;
+        font-size: 0.8rem;
+        width: 100%; }
+  body .gameContainer .notice {
+    display: flex;
+    position: relative; }
+    body .gameContainer .notice h1 {
+      padding: 5px;
+      font-weight: 600;
+      text-shadow: 1px 1px 13px #2f2f2fad; }
+    body .gameContainer .notice .time {
+      position: absolute;
+      right: 0; }
+  body .gameContainer .notification {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    animation: notification 5s forwards; }
+  body .gameContainer .contents-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px; }
+    body .gameContainer .contents-container .paint {
+      background-color: white;
+      margin-right: 50px;
+      width: 100%; }
+      body .gameContainer .contents-container .paint .word {
+        border-bottom: 5px solid #e3e3e3;
+        padding: 10px; }
+        body .gameContainer .contents-container .paint .word p.answer {
+          text-align: center;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          font-weight: 800; }
+      body .gameContainer .contents-container .paint .canvas {
+        border-bottom: 1px solid #cccccca3; }
+      body .gameContainer .contents-container .paint .controls {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #e3e3e3; }
+        body .gameContainer .contents-container .paint .controls .controls_clean .control__clean,
+        body .gameContainer .contents-container .paint .controls .controls_clean .control__mode {
+          width: 100px;
+          height: 20px;
+          margin: 5px;
+          font-size: 1rem;
+          box-shadow: 1px 1px 20px 0px #848484c9;
+          cursor: pointer;
+          margin-top: 10px;
+          margin-bottom: 10px; }
+        body .gameContainer .contents-container .paint .controls .controls__colors {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center; }
+          body .gameContainer .contents-container .paint .controls .controls__colors .control__color {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 1px 1px 11px 1px #00000061; }
+    body .gameContainer .contents-container .chat {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-height: 900px;
+      width: 300px; }
+      body .gameContainer .contents-container .chat .messages {
+        height: 400px;
+        width: 100%;
+        background: white;
+        overflow: scroll;
+        box-shadow: 1px 1px 20px 0px #848484c9; }
+        body .gameContainer .contents-container .chat .messages li {
+          padding: 10px; }
+      body .gameContainer .contents-container .chat .chat__form {
+        padding: 10px;
+        width: 100%;
+        text-align: center; }
+        body .gameContainer .contents-container .chat .chat__form input {
+          padding: 10px;
+          font-size: 0.85rem;
+          width: 100%;
+          box-shadow: 0px 0px 10px 1px #7777778c; }
+    body .gameContainer .contents-container .user_list {
+      max-height: 400px;
+      margin-left: 10px;
+      background: white;
+      box-shadow: 1px 1px 20px 0px #848484c9; }
+      body .gameContainer .contents-container .user_list ul {
+        height: 100%;
+        width: 120px; }
+        body .gameContainer .contents-container .user_list ul li {
+          padding: 10px;
+          margin: 10px;
+          border-radius: 50px;
+          box-shadow: 1px 1px 20px 0px #848484c9; }
+  body .loginBox,
+  body .gameContainer {
+    display: none; }
+  body.loggedOut .loginBox {
+    display: block; }
+  body.loggedIn .gameContainer {
+    display: block; }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/static/styles.css")
+        script(src="https://kit.fontawesome.com/e5fb7a43a0.js",crossorigin="anonymous")
+        title Cacha Mind
+    body
+        header
+            .menu
+                span.quit
+                    i.fas.fa-sign-out-alt
+        .loginBox
+            .title-container
+                h1 Cacha Mind
+            form#jsLogin
+                input(type="text",placeholder="Nick Name",name="name")
+        .gameContainer#jsGame
+            .notice
+                h1 You are logged in
+                h1.time 0:30 
+            div#jsNotification 
+            .contents-container
+                .paint
+                    .word
+                        p.answer Please Wait...
+                    canvas.canvas#jsCanvas
+                    .controls
+                        .controls_clean
+                            button.control__mode Fill
+                            button.control__clean Clear
+                        .controls__colors
+                            div(class="control__color" style="background-color:black ;")
+                            div(class="control__color" style="background-color:white ;")
+                            div(class="control__color" style="background-color:red ;")
+                            div(class="control__color" style="background-color:blue ;")
+                            div(class="control__color" style="background-color:yellow ;")
+                            div(class="control__color" style="background-color:skyblue ;")
+                            div(class="control__color" style="background-color:greenyellow ;")
+                            div(class="control__color" style="background-color:green ;")
+                            div(class="control__color" style="background-color:purple ;")
+                            div(class="control__color" style="background-color:orange ;")
+                .chat
+                    ul.messages#jsMessages
+                    form.chat__form#jsSendMsg
+                        input(type="text",placeholder="Type a Message")
+                .user_list
+                    ul#jsUsers
+        script.
+            window.events = !{events}
+        script(src="/socket.io/socket.io.js")
+        script(src="/static/main.js")

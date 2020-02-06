@@ -1,0 +1,62 @@
+{
+  "name": "cachamind",
+  "version": "1.0.0",
+  "description": "Realtime Drawing Game CachaMind - SocketIO, webpack and Node",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node src/server.js --ignore 'src/assets' --ignore 'src/static'  ",
+    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "minify": "postcss src/static/styles.css -o src/static/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leye195/CachaMind.git"
+  },
+  "author": "YJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leye195/CachaMind/issues"
+  },
+  "homepage": "https://github.com/leye195/CachaMind#readme",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "helmet": "^3.21.2",
+    "morgan": "^1.9.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-cli": "^7.1.0",
+    "pug": "^2.0.4",
+    "socket.io": "^2.3.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "csso-loader": "^0.3.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3"
+  }
+}
